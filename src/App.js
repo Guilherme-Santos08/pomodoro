@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     <GlobalStyle />
-    <Pomodoro />
+    <Pomodoro minutes={0} seconds={5}/>
     </>
   );
 }
