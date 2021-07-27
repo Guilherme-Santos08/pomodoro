@@ -9,14 +9,14 @@ export const Teste = styled.div`
 
    background-color: #006466;
    height: 100vh;
-   padding: 0 10px;
+   padding: 0 0.625rem;
 
    .teste {
       background-color: #00303d;
-      width: 677px;
-      height: 472px;
+      width: 42.313rem;
+      height: 29.5rem;
       border-radius: 8px;
-      padding: 10px;
+      padding: 0.625rem;
       display: flex;
       flex-direction: column;
 
@@ -28,8 +28,8 @@ export const Teste = styled.div`
 
          border-radius: 8px;
 
-         padding: 0 10px;
-         height: 60px;
+         padding: 0 0.625rem;
+         height: 3.75rem;
 
          li {
             font-size: 1.3rem;
@@ -40,11 +40,11 @@ export const Teste = styled.div`
       }
 
       .counter {
-         width: 423px;
-         height: 240px;
+         width: 26.438rem;
+         height: 15rem;
 
          border-radius: 8px;
-         
+
          margin: auto;
 
          display: flex;
@@ -62,7 +62,7 @@ export const Teste = styled.div`
          }
 
          span {
-            font-size: 90px;
+            font-size: 5.625rem;
             font-weight: bold;
          }
 
@@ -95,14 +95,14 @@ export const Teste = styled.div`
          }
          .counter {
             width: 100%;
-            height: 240px;
+            height: 15rem;
 
             span {
-               font-size: 70px;
+               font-size: 4.375rem;
             }
             button {
                width: 200px;
-               height: 50px;
+               height: 3.125rem;
                font-size: 1.3rem;
             }
          }
