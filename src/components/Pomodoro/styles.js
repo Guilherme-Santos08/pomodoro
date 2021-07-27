@@ -31,11 +31,13 @@ export const Teste = styled.div`
          padding: 0 0.625rem;
          height: 3.75rem;
 
-         li {
+         li,a {
             font-size: 1.3rem;
             font-weight: bold;
             list-style: none;
             cursor: pointer;
+            text-decoration: none;
+            color: white;
          }
       }
 
