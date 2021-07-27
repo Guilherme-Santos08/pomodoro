@@ -1,10 +1,12 @@
-import './App.css';
+import Pomodoro from "./components/Pomodoro/Pomoro";
+import GlobalStyle from "./styles/GlobalStyle"
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+    <GlobalStyle />
+    <Pomodoro />
+    </>
   );
 }
 
