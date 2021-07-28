@@ -15,7 +15,7 @@ function App() {
                   exact
                   render={() => (
                      <PomodoroPage
-                        minutes={5}
+                        minutes={25}
                         seconds={0}
                         historys={"short-break"}
                      />
