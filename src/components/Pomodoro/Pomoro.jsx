@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Teste } from "./styles";
@@ -10,12 +11,12 @@ const Pomodoro = ({
    seconds = 0,
    historys,
    whatThemeBackground,
-   whatThemeHeader,
-   whatThemeSecondary,
 }) => {
    let history = useHistory();
    const [paused, setPaused] = useState(true);
    const [[minute, second], setTime] = useState([minutes, seconds]);
+   const [count, setCount] = useState(0)
+   console.log(count);
 
    const tick = () => {
       if (paused) return;
@@ -27,8 +28,16 @@ const Pomodoro = ({
       if (minute === 0 && second === 0) {
          setTime([0, 0]);
          history.push(historys);
+         setCount(count + 1)
       }
    };
+
+   useEffect(() => {
+      count === 7 && history.push("/long-break")
+      if(count === 5) {
+         setCount(0)
+      }
+   }, [count])
 
    useEffect(() => {
       if (paused === false) {
