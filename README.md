@@ -9,3 +9,13 @@
 <p align="center">
 <img src="https://i.imgur.com/kvgsFYS.gif" width="80%"/>
 </p>
+
+## 📖 Sobre
+Projeto Pomodoro para praticar ReactJs e aprender a usar Styled-Components
+
+## 🚀 Tecnologias
+* ReactJs
+* Styled-Components
+
+## Live
+* https://guilherme-santos08-pomodoro.vercel.app/
