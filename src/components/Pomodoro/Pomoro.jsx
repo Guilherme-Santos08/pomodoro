@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Teste } from "./styles";
+import { theme, ThemesPage } from "../../styles/ThemesPage";
 
-const Pomodoro = ({ minutes = 0, seconds = 0, historys }) => {
+import { ThemeProvider } from "styled-components";
+
+const Pomodoro = ({
+   minutes = 0,
+   seconds = 0,
+   historys,
+   whatThemeBackground,
+   whatThemeHeader,
+   whatThemeSecondary,
+}) => {
    let history = useHistory();
    const [paused, setPaused] = useState(true);
    const [[minute, second], setTime] = useState([minutes, seconds]);
@@ -28,34 +38,37 @@ const Pomodoro = ({ minutes = 0, seconds = 0, historys }) => {
    });
 
    return (
-      <Teste>
-         <div className="teste">
-            <header>
-               <Link to="/">
-                  <li>Pomodoro</li>
-               </Link>
-               <Link to="/short-break">
-                  <li>Short Break</li>
-               </Link>
-               <Link to="/long-break">
-                  <li>Long Break</li>
-               </Link>
-            </header>
-            <div className="counter">
-               <div className="counter__info">
-                  <span>
-                     {`${minute.toString().padStart(2, "0")}:${second
-                        .toString()
-                        .padStart(2, "0")}`}
-                  </span>
-                  <button onClick={() => setPaused(!paused)}>
-                     {paused ? "Start" : "Pause"}
-                  </button>
-                  {/* Criar um ternario, quando o counter estiver ativo, a menssagem muda pra "Stop"*/}
+      <ThemeProvider theme={theme}>
+         <ThemesPage />
+            <Teste whatThemeBackground={whatThemeBackground}>
+               <div className="teste">
+                  <header>
+                     <Link to="/">
+                        <li>Pomodoro</li>
+                     </Link>
+                     <Link to="/short-break">
+                        <li>Short Break</li>
+                     </Link>
+                     <Link to="/long-break">
+                        <li>Long Break</li>
+                     </Link>
+                  </header>
+                  <div className="counter">
+                     <div className="counter__info">
+                        <span>
+                           {`${minute.toString().padStart(2, "0")}:${second
+                              .toString()
+                              .padStart(2, "0")}`}
+                        </span>
+                        <button onClick={() => setPaused(!paused)}>
+                           {paused ? "Start" : "Pause"}
+                        </button>
+                        {/* Criar um ternario, quando o counter estiver ativo, a menssagem muda pra "Stop"*/}
+                     </div>
+                  </div>
                </div>
-            </div>
-         </div>
-      </Teste>
+            </Teste>
+      </ThemeProvider>
    );
 };
 

@@ -1,8 +1,8 @@
-import Pomodoro from "./components/Pomodoro/Pomoro";
 import GlobalStyle from "./styles/GlobalStyle";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ShortBreak from "./components/ShortBreak/ShortBreak";
-import LongBreak from "./components/LongBreak/LongBreak";
+import ShortBreak from "./pages/ShortBreak/ShortBreak";
+import LongBreak from "./pages/LongBreak/LongBreak";
+import PomodoroPage from "./pages/PomodoroPage/PomodoroPage";
 
 function App() {
    return (
@@ -14,9 +14,9 @@ function App() {
                   path="/"
                   exact
                   render={() => (
-                     <Pomodoro
-                        minutes={0}
-                        seconds={5}
+                     <PomodoroPage
+                        minutes={5}
+                        seconds={0}
                         historys={"short-break"}
                      />
                   )}
