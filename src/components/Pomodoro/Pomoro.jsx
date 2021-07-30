@@ -6,7 +6,7 @@ import { theme, ThemesPage } from "../../styles/ThemesPage";
 
 import { ThemeProvider } from "styled-components";
 
-alert("Em contrução!!!")
+alert("Em produção")
 
 const Pomodoro = ({
    minutes = 0,
@@ -18,9 +18,11 @@ const Pomodoro = ({
    const [paused, setPaused] = useState(true);
    const [[minute, second], setTime] = useState([minutes, seconds]);
    const [count, setCount] = useState(0);
+   let minuteFormated = `${minute.toString().padStart(2, "0")}`;
+   let secondFormated = `${second.toString().padStart(2, "0")}`;
 
-   console.log(count);
-   
+   document.title = `Pomodoro - ${minuteFormated}:${secondFormated}`;
+
    const tick = () => {
       if (paused) return;
       else if (second === 0) {
@@ -30,11 +32,11 @@ const Pomodoro = ({
       }
       if (minute === 0 && second === 0) {
          setTime([0, 0]);
-         setCount(count + 1)
-         history.push("/short-break");
+         setCount(count + 1);
+         history.push(historys);
       }
    };
-   
+
    useEffect(() => {
       count === 7 && history.push("/long-break");
       if (count === 5) {
@@ -67,11 +69,7 @@ const Pomodoro = ({
                </header>
                <div className="counter">
                   <div className="counter__info">
-                     <span>
-                        {`${minute.toString().padStart(2, "0")}:${second
-                           .toString()
-                           .padStart(2, "0")}`}
-                     </span>
+                     <span>{`${minuteFormated}:${secondFormated}`}</span>
                      <button onClick={() => setPaused(!paused)}>
                         {paused ? "Start" : "Pause"}
                      </button>
