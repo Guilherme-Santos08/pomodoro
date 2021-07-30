@@ -6,6 +6,8 @@ import { theme, ThemesPage } from "../../styles/ThemesPage";
 
 import { ThemeProvider } from "styled-components";
 
+alert("Em contrução!!!")
+
 const Pomodoro = ({
    minutes = 0,
    seconds = 0,
@@ -15,9 +17,10 @@ const Pomodoro = ({
    let history = useHistory();
    const [paused, setPaused] = useState(true);
    const [[minute, second], setTime] = useState([minutes, seconds]);
-   const [count, setCount] = useState(0)
-   console.log(count);
+   const [count, setCount] = useState(0);
 
+   console.log(count);
+   
    const tick = () => {
       if (paused) return;
       else if (second === 0) {
@@ -27,17 +30,17 @@ const Pomodoro = ({
       }
       if (minute === 0 && second === 0) {
          setTime([0, 0]);
-         history.push(historys);
          setCount(count + 1)
+         history.push("/short-break");
       }
    };
-
+   
    useEffect(() => {
-      count === 7 && history.push("/long-break")
-      if(count === 5) {
-         setCount(0)
+      count === 7 && history.push("/long-break");
+      if (count === 5) {
+         setCount(0);
       }
-   }, [count])
+   }, [count]);
 
    useEffect(() => {
       if (paused === false) {
@@ -49,34 +52,34 @@ const Pomodoro = ({
    return (
       <ThemeProvider theme={theme}>
          <ThemesPage />
-            <Teste whatThemeBackground={whatThemeBackground}>
-               <div className="teste">
-                  <header>
-                     <Link to="/">
-                        <li>Pomodoro</li>
-                     </Link>
-                     <Link to="/short-break">
-                        <li>Short Break</li>
-                     </Link>
-                     <Link to="/long-break">
-                        <li>Long Break</li>
-                     </Link>
-                  </header>
-                  <div className="counter">
-                     <div className="counter__info">
-                        <span>
-                           {`${minute.toString().padStart(2, "0")}:${second
-                              .toString()
-                              .padStart(2, "0")}`}
-                        </span>
-                        <button onClick={() => setPaused(!paused)}>
-                           {paused ? "Start" : "Pause"}
-                        </button>
-                        {/* Criar um ternario, quando o counter estiver ativo, a menssagem muda pra "Stop"*/}
-                     </div>
+         <Teste whatThemeBackground={whatThemeBackground}>
+            <div className="teste">
+               <header>
+                  <Link to="/">
+                     <li>Pomodoro</li>
+                  </Link>
+                  <Link to="/short-break">
+                     <li>Short Break</li>
+                  </Link>
+                  <Link to="/long-break">
+                     <li>Long Break</li>
+                  </Link>
+               </header>
+               <div className="counter">
+                  <div className="counter__info">
+                     <span>
+                        {`${minute.toString().padStart(2, "0")}:${second
+                           .toString()
+                           .padStart(2, "0")}`}
+                     </span>
+                     <button onClick={() => setPaused(!paused)}>
+                        {paused ? "Start" : "Pause"}
+                     </button>
+                     {/* Criar um ternario, quando o counter estiver ativo, a menssagem muda pra "Stop"*/}
                   </div>
                </div>
-            </Teste>
+            </div>
+         </Teste>
       </ThemeProvider>
    );
 };

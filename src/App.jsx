@@ -17,7 +17,7 @@ function App() {
                      <PomodoroPage
                         minutes={0}
                         seconds={2}
-                        // historys={"short-break"}
+                        historys={"short-break"}
                      />
                   )}
                />
