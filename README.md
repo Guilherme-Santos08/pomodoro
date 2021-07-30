@@ -19,3 +19,6 @@ Projeto Pomodoro para praticar ReactJs e aprender a usar Styled-Components
 
 ## Live
 * https://guilherme-santos08-pomodoro.vercel.app/
+
+## O que eu não consegui fazer ?
+ - Ao completar 4 ciclos entre 25:00 e 05:minutes, ele redirecionar para o long-break, aonde a pausa seria de 15 minutos
