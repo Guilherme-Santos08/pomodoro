@@ -15,14 +15,14 @@ function App() {
                   exact
                   render={() => (
                      <PomodoroPage
-                        minutes={0}
-                        seconds={2}
+                        minutes={25}
+                        seconds={0}
                         historys={"short-break"}
                      />
                   )}
                />
                <Route path="/short-break" exact>
-                  <ShortBreak minutes={0} seconds={2} historys={"/"} />
+                  <ShortBreak minutes={5} seconds={0} historys={"/"} />
                </Route>
                <Route path="/long-break" exact>
                   <LongBreak minutes={15} seconds={0} historys={"/"} />
