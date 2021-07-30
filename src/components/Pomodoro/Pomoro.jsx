@@ -6,7 +6,7 @@ import { theme, ThemesPage } from "../../styles/ThemesPage";
 
 import { ThemeProvider } from "styled-components";
 
-alert("Em produção")
+// alert("Em produção")
 
 const Pomodoro = ({
    minutes = 0,
@@ -17,7 +17,7 @@ const Pomodoro = ({
    let history = useHistory();
    const [paused, setPaused] = useState(true);
    const [[minute, second], setTime] = useState([minutes, seconds]);
-   const [count, setCount] = useState(0);
+   // const [count, setCount] = useState(0);
    let minuteFormated = `${minute.toString().padStart(2, "0")}`;
    let secondFormated = `${second.toString().padStart(2, "0")}`;
 
@@ -32,17 +32,17 @@ const Pomodoro = ({
       }
       if (minute === 0 && second === 0) {
          setTime([0, 0]);
-         setCount(count + 1);
          history.push(historys);
+         // console.log(count);
       }
    };
 
-   useEffect(() => {
-      count === 7 && history.push("/long-break");
-      if (count === 5) {
-         setCount(0);
-      }
-   }, [count]);
+   // useEffect(() => {
+   //    count === 7 && history.push("/long-break");
+   //    if (count === 5) {
+   //       setCount(0);
+   //    }
+   // }, [count]);
 
    useEffect(() => {
       if (paused === false) {
