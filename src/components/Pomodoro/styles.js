@@ -23,7 +23,7 @@ export const theme = {
    },
 };
 
-export const Teste = styled.div`
+export const Container = styled.div`
    ${(props) =>
       props.whatThemeBackground === "shortBreak" &&
       css`
